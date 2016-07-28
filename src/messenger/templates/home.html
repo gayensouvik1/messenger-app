@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+
+<style>
+{% block style %}
+	
+.jumbotron{
+	background-color: #7D0707;
+	color: #FFFFFF;
+}
+{% endblock %}
+</style>
+
+{% block jumbotron %}
+	<div class="jumbotron">
+	<div class="container">
+	<div class="row">
+	<!-- Main component for a primary marketing message or call to action -->
+	      <div class="col-sm-7">
+	      	<p><img src="{% static 'img/logo.jpg' %}"></p>
+	        <h1>Mini Messenger</h1>
+	        <p>Here you can send messeges,videos and images</p>
+	      </div>
+	      <div class="col-sm-5">
+	      	<iframe width="560" height="315" src="https://www.youtube.com/embed/g_YToB10qUs" frameborder="0" allowfullscreen></iframe>
+	      </div>
+	  </div>
+	</div>
+	</div>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="row">
+	<div class="col-sm-3 pull-right">
+		<p class="lead text-align-center">{{title}}</p>
+		
+		
+	</div>
+
+	<div class="col-sm-3">
+		<p class="lead text-align-center">
+			<img src="{% static 'img/msg.png' %}" />
+		</p>
+	</div>
+	<div class="col-sm-3" style="color:green">
+		
+
+	</div>
+	<div class="col-sm-3" style="color:green">
+		<p class="lead text-align-center">
+			<span class="fa-stack fa-lg fa-5x">
+					<i class="fa fa-circle-o-notch fa-stack-2x fa-spin"></i>
+					<i class="fa fa-envelope fa-stack-1x"></i>
+
+			</span>
+		</p>
+	</div>
+
+</div>
+
+
+{% endblock %}

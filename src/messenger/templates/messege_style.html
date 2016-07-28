@@ -1,0 +1,32 @@
+
+
+
+{% for i in list %}
+	
+	{% if i.receiver == request.user.username %}
+
+	<div class="row m">
+	<div class='col-sm-8 test'>
+		
+		<h5 align="right">From {{i.sender}}</h6>
+		<h4>{{i.message}}</h4>		
+				
+	</div>
+	</div>
+
+	
+	{% endif %}
+	{% if i.sender == request.user.username %}
+
+	<div class='col-sm-4'>			
+	</div>
+	<div class='col-sm-8 test'>
+		
+		<h5 align="right">To {{i.receiver}}</h6>
+		<h4>{{i.message}}</h4>		
+		
+	</div>
+	
+	{% endif %}
+
+{% endfor %}

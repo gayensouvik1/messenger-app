@@ -1,0 +1,44 @@
+<head>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<style>
+{% block style %}
+    
+.m {
+    background-color: #00FFFF;
+    height: 500px;
+    
+}
+{% endblock %}
+</style>
+</head>
+<body>
+{% block content %}
+
+<div class="row m">
+
+
+
+
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <br /> <br />
+        <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+        {% csrf_token %}
+        {{form|crispy}}
+
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+
+        {# Assumes you setup the password_reset view in your URLconf #}
+        <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    </div>
+</div>
+
+
+
+{% endblock %}
+</body>
